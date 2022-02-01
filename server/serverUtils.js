@@ -17,10 +17,8 @@ function getData(req, res, collectionName) {
             .find({})
             .toArray((err, collectionData) => {
                 if (err) throw err;
-                let resultArray = [];
-                resultArray = collectionData;
-                res.status(200)
-                res.send(resultArray);
+                res.send(collectionData);
+                console.log({ collectionData });
             });
     });
 }

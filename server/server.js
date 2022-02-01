@@ -2,7 +2,7 @@ const express = require("express"),
     // require("dotenv").config();
     // const path = require("path"),
     //   publicPath = path.join(__dirname, "..", "public"),
-    PORT = 8080,
+    PORT = 5000,
     {
         getData,
     } = require('./serverUtils');
@@ -15,7 +15,8 @@ app.use(express.json());
 
 
 app.get('/movies', (req, res) => {
-    getData(req, res, 'movies');
+    res.send("server works");
+    // getData(req, res, 'movies');
 });
 
 app.get('/tvShows', (req, res) => {
@@ -25,7 +26,6 @@ app.get('/tvShows', (req, res) => {
 
 app.get('/users', (req, res) => {
     getData(req, res, "users");
-    // res.send(users)
 });
 
 
